@@ -3,7 +3,7 @@ export default class PRAccess {
   private ariaH2: HTMLElement;
   private textList: string[];
   private forceChange: boolean;
-
+  // a
   // 싱글톤
   private static instance: PRAccess
   private constructor () {
