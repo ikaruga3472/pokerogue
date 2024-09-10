@@ -2,6 +2,7 @@ import BattleScene from "../battle-scene";
 import AwaitableUiHandler from "./awaitable-ui-handler";
 import { Mode } from "./ui";
 import * as Utils from "../utils";
+import PRAccess from "#app/accessibility.js";
 
 export default abstract class MessageUiHandler extends AwaitableUiHandler {
   protected textTimer: Phaser.Time.TimerEvent | null;
@@ -142,6 +143,7 @@ export default abstract class MessageUiHandler extends AwaitableUiHandler {
       });
     } else {
       this.message.setText(text);
+      PRAccess.getInstance().speak(text);
       if (prompt) {
         this.pendingPrompt = true;
       }
